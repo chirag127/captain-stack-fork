@@ -1,17 +1,15 @@
-import { isCodeValid } from '../src/utils/extractors/utils';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("../src/utils/extractors/utils");
 require('jest');
-
 test("AI Code Validation - Valid", () => {
-    expect(isCodeValid("function test() { return 1; }")).toBe(true);
-    expect(isCodeValid("function test() { return 1; }\nfunction test2() { return 1; }")).toBe(true);
+    expect((0, utils_1.isCodeValid)("function test() { return 1; }")).toBe(true);
+    expect((0, utils_1.isCodeValid)("function test() { return 1; }\nfunction test2() { return 1; }")).toBe(true);
 });
-
 test("AI Code Validation - Invalid", () => {
-    expect(isCodeValid("thisisnotcode")).toBe(false);
+    expect((0, utils_1.isCodeValid)("thisisnotcode")).toBe(false);
 });
-
-const testCases: [string, boolean][] = [['public int counter = 0;', true],
+const testCases = [['public int counter = 0;', true],
     ['Toast msg;', true],
     ['public int counter = 0;', true],
     ['ImageView img, img2, img3, img4, img5, img6, img7, img8, img9;', true],
@@ -334,7 +332,7 @@ const testCases: [string, boolean][] = [['public int counter = 0;', true],
     raise AttributeError(name)
 AttributeError: read`, false],
     ['import pyspark.pandas as pd \n' +
-    'pd["date_col_2"] = pd["date_col_1"] - pd.DateOffset(months=5)', true],
+            'pd["date_col_2"] = pd["date_col_1"] - pd.DateOffset(months=5)', true],
     ['AttributeError: module \'pyspark.pandas\' has no attribute \'DateOffset\'\n', false],
     ['db.execute("SELECT ? FROM currency WHERE user_id = ?", ( "usd", 1).fetchall()', true],
     [`SET ANSI_NULLS ON
@@ -416,13 +414,12 @@ AttributeError: read`, false],
     ['SELECT COUNT(CompanyID) FROM email_archive', true],
     ['I have joined two tables via CompanyID to get the count of those attachment that have null and those that are not null. I have then calculated the percentage and to the result I have concatenated \'%\' string.', false]
 ];
-
 test("Testing for 95% of tests to be valid", () => {
     let succeeded = 0;
     let failed = 0;
     for (let i = 0; i < testCases.length; i++) {
         const testCase = testCases[i];
-        const result = isCodeValid(testCase[0]);
+        const result = (0, utils_1.isCodeValid)(testCase[0]);
         result == testCase[1] ? succeeded++ : failed++;
     }
     expect(succeeded).toBeGreaterThan(testCases.length * 0.95);
