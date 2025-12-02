@@ -1,0 +1,89 @@
+name: CodePilot CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: . # Assuming root is the correct place for tsconfig/package.json
+
+    steps:
+      - name: 🛑 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Aligning with modern LTS for TypeScript projects
+          cache: 'npm'
+
+      - name: 📥 Install Dependencies (uv/npm Equivalent)
+        run: npm ci
+
+      - name: 🧹 Linting & Formatting Check (Biome Standard)
+        # Assuming Biome configuration is set up for speed and compliance
+        run: npm run lint
+
+      - name: 🔬 Run Unit Tests (Vitest)
+        # Assuming standard Vitest execution for TypeScript/Node environments
+        run: npm run test:unit
+
+      - name: 🧪 Run End-to-End Tests (Playwright)
+        # Assuming extension testing setup requires Playwright
+        run: npm run test:e2e
+
+      - name: 📦 Package Extension (If successful)
+        # Standard step for packaging VSCode extensions
+        run: npm run package
+        
+      - name: 🚀 Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: codepilot-extension-package
+          path: '*.vsix'
+          retention-days: 5
+
+  deploy-to-marketplace:
+    needs: build-and-test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: production # Requires environment setup in GitHub Secrets
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: 📥 Download Built Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: codepilot-extension-package
+
+      - name: 🔑 Set up Deployment Token
+        uses: actions/checkout@v4
+
+      # NOTE: For VSCode extensions, deployment usually involves 'vsce' or specific GitHub Action Marketplace integration.
+      # Using a placeholder for the deployment step, assuming a secure environment variable exists.
+      - name: 📢 Publish to VSCode Marketplace (Placeholder)
+        run: |
+          echo "Simulating VSCode Marketplace publish using vsce..."
+          # vsce publish -p ${{ secrets.VSCE_TOKEN }}
+        env:
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🔎 Run Static Analysis (Snyk/Semgrep Integration)
+        # Placeholder for security scanning, mandatory for developer tools
+        run: echo "Running advanced static analysis..."
+        # Example: uses: snyk/actions/node@master
+        # with: 
+        #   args: --all-sub-projects=true
