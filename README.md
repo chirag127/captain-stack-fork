@@ -1,151 +1,212 @@
-# CodePilot: AI-Powered VSCode Extension
+<p align="center">
+  <img src="https://raw.githubusercontent.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/main/.github/assets/logo.png" alt="CodeInsight Logo" width="200"/>
+</p>
 
-<div align="center">
-
-
-   ____          __           ____  _            __
-  / __/__  ___  / /________  / __/ (_)__  ___  / /
- _\ \/ _ \/ _ \/ __/ __/ _ \_\ \  / / _ \/ _ \/ / 
-/___/\___/\___/\__/_/  \___/___/ /_/\___/_//_/_/  
-                                                 
-
-
-**Your AI-powered copilot for navigating StackOverflow, right inside VSCode.**
-
-</div>
+<h1 align="center">CodeInsight-AI-Code-Assistant-VSCode-Extension</h1>
 
 <p align="center">
-    <a href="https://github.com/chirag127/CodePilot-AI-Powered-VSCode-Extension/actions/workflows/ci.yml"><img src="https://github.com/chirag127/CodePilot-AI-Powered-VSCode-Extension/actions/workflows/ci.yml/badge.svg?style=flat-square" alt="Build Status"></a>
-    <a href="#"><img src="https://img.shields.io/codecov/c/github/chirag127/CodePilot-AI-Powered-VSCode-Extension?style=flat-square" alt="Code Coverage"></a>
-    <a href="#"><img src="https://img.shields.io/badge/tech-TypeScript%20%7C%20VSCode%20API-3178C6?style=flat-square" alt="Tech Stack"></a>
-    <a href="#"><img src="https://img.shields.io/badge/lint-Biome-56B9F1?style=flat-square" alt="Linter"></a>
-    <a href="https://github.com/chirag127/CodePilot-AI-Powered-VSCode-Extension/blob/main/LICENSE"><img src="https://img.shields.io/github/license/chirag127/CodePilot-AI-Powered-VSCode-Extension?style=flat-square&color=blue" alt="License"></a>
-    <a href="https://github.com/chirag127/CodePilot-AI-Powered-VSCode-Extension/stargazers"><img src="https://img.shields.io/github/stars/chirag127/CodePilot-AI-Powered-VSCode-Extension?style=social" alt="GitHub stars"></a>
+  <a href="https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/ci.yml?branch=main&style=flat-square&label=Build%20Status" alt="Build Status">
+  </a>
+  <a href="https://codecov.io/gh/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension">
+    <img src="https://img.shields.io/codecov/c/github/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension?style=flat-square&label=Coverage" alt="Code Coverage">
+  </a>
+  <img src="https://img.shields.io/badge/Tech%20Stack-TypeScript%20%7C%20WXT%20%7C%20Vite%20%7C%20VSCode-blueviolet?style=flat-square" alt="Tech Stack">
+  <img src="https://img.shields.io/badge/Lint%2FFmt-Biome-9D721A?style=flat-square" alt="Lint/Format: Biome">
+  <a href="https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=flat-square" alt="License: CC BY-NC 4.0">
+  </a>
+  <a href="https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/stargazers">
+    <img src="https://img.shields.io/github/stars/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension?style=flat-square&label=Stars&color=fcc624" alt="GitHub Stars">
+  </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/chirag127/CodePilot-AI-Powered-VSCode-Extension/stargazers"><strong>Star ⭐ this Repo</strong></a> to support the project!
+  Star ⭐ this Repo to show your support and help our project grow!
 </p>
 
 ---
 
-## TL;DR
+## 🚀 Overview: AI-Powered Code Assistance for VSCode
 
-**CodePilot** is an intelligent VSCode extension that provides real-time, AI-powered code suggestions directly in your editor. It queries StackOverflow and other sources to deliver context-aware completions, accelerating your development workflow without breaking your focus.
+CodeInsight-AI-Code-Assistant-VSCode-Extension is an intelligent VSCode extension that revolutionizes developer productivity by providing real-time, context-aware code suggestions directly within your editor. Leveraging advanced AI, it analyzes your codebase and current context to deliver precise completions, bug fixes, and best-practice recommendations, significantly reducing development time and improving code quality.
 
-## Table of Contents
+This extension taps into a vast knowledge base, including insights from platforms like StackOverflow, to offer highly relevant and accurate suggestions. It's designed to seamlessly integrate into your existing workflow, acting as a proactive coding companion that understands your intent and helps you write better code faster.
 
-- [✨ Features](#-features)
-- [🏛️ Architecture](#️-architecture)
-- [🚀 Getting Started](#-getting-started)
-- [🛠️ Development](#️-development)
-- [🤖 AI Agent Directives](#-ai-agent-directives)
-- [🤝 Contributing](#-contributing)
-- [📜 License](#-license)
+---
 
-## ✨ Features
+## 🎯 Key Features
 
-- **Inline Code Suggestions**: Get relevant code snippets based on your current context (comments, function signatures).
-- **StackOverflow Integration**: Leverages the vast knowledge base of StackOverflow, parsed and refined by AI.
-- **Real-Time Completions**: Suggestions appear as you type, minimizing disruption.
-- **Configurable**: Easily toggle features and customize suggestion behavior.
-- **Lightweight & Fast**: Optimized for performance to ensure a smooth editor experience.
+*   **Real-time AI Suggestions:** Context-aware code completions and recommendations as you type.
+*   **StackOverflow Integration:** Harnesses community knowledge for problem-solving and best practices.
+*   **Intelligent Refactoring:** Suggests optimal code structure and improvements.
+*   **Error Detection & Fixes:** Proactively identifies potential issues and offers solutions.
+*   **Customizable Experience:** Tailor AI models and suggestion preferences to your needs.
+*   **Seamless VSCode Integration:** Works natively within your favorite editor environment.
 
-## 🏛️ Architecture
+---
 
-This project follows a modular, feature-sliced design to ensure scalability and maintainability. Core services are decoupled, allowing for independent testing and development.
+## 🏗️ Architecture
+
+CodeInsight employs a robust, modular architecture designed for performance, extensibility, and maintainability, following the **Feature-Sliced Design (FSD)** principles.
+
+mermaid
+graph TD
+    A[VSCode Editor] -->|Communicates via LSP| B(Extension Host)
+    B --> C{Core Extension Logic}
+    C --> D[Language Server Client]
+    D --> E[Language Server (Node.js)]
+    E --> F[AI API Service]
+    E --> G[Context Analyzer]
+    E --> H[StackOverflow API]
+
+    F --&gt;|AI Suggestions| E
+    G --&gt;|Code Context| E
+    H --&gt;|Community Data| E
+    C --&gt;|Manages Webviews| I[UI Components (Webviews)]
+    I --&gt;|User Interaction| A
 
 
-.vscode-extension/
-├── src/
-│   ├── extension.ts        # Main extension entry point
-│   ├── services/
-│   │   ├── apiService.ts     # Handles StackOverflow/Google queries
-│   │   └── completionProvider.ts # Logic for generating suggestions
-│   ├── utils/
-│   │   └── parser.ts       # HTML/Text parsing utilities
-│   └── webview/
-│       └── ...               # UI components for settings/display
-├── package.json            # Extension manifest and dependencies
-└── tsconfig.json           # TypeScript configuration
+**Key Components:**
 
+*   **Extension Host:** The main entry point for the VSCode extension, managing activation, commands, and communication with the Language Server Client.
+*   **Language Server Client:** Facilitates communication between the VSCode extension and the Language Server via the Language Server Protocol (LSP).
+*   **Language Server (Node.js):** The core backend service responsible for processing code, generating suggestions, and interacting with external services. It analyzes the AST, provides diagnostics, and serves completions.
+*   **Context Analyzer:** Extracts relevant code snippets, surrounding syntax, and project structure to provide rich context for the AI model.
+*   **AI API Service:** Interfaces with external AI models (e.g., Google Gemini, OpenAI GPT) to generate intelligent code suggestions, refactoring ideas, and error fixes based on the provided context.
+*   **StackOverflow API Integration:** Queries and parses StackOverflow data to incorporate community-driven solutions and best practices into suggestions.
+*   **UI Components (Webviews):** Interactive web-based interfaces within VSCode for settings, detailed explanations, or custom suggestion UIs.
 
-## 🚀 Getting Started
+---
 
-### Prerequisites
+## ⚙️ Installation & Setup
 
-- [Visual Studio Code](https://code.visualstudio.com/) (v1.80.0 or newer)
-- [Node.js](https://nodejs.org/) (v18.x or newer)
+To get CodeInsight running in your VSCode environment:
 
-### Installation
-
-1.  Clone the repository:
+1.  **Clone the Repository:**
     bash
-    git clone https://github.com/chirag127/CodePilot-AI-Powered-VSCode-Extension.git
+    git clone https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension.git
+    cd CodeInsight-AI-Code-Assistant-VSCode-Extension
     
-2.  Navigate to the project directory:
-    bash
-    cd CodePilot-AI-Powered-VSCode-Extension
-    
-3.  Install dependencies:
+
+2.  **Install Dependencies:**
     bash
     npm install
     
-4.  Open the project in VSCode and press `F5` to launch a new Extension Development Host window with the extension activated.
 
-## 🛠️ Development
+3.  **Build the Extension:**
+    bash
+    npm run build
+    
 
-All development tasks are managed through `npm` scripts defined in `package.json`.
+4.  **Run in Development Mode:**
+    *   Open the project folder in VSCode.
+    *   Press `F5` to open a new VSCode window with the extension loaded.
 
-| Script      | Description                                           |
-| ----------- | ----------------------------------------------------- |
-| `npm run dev`   | Compiles the extension in watch mode for development. |
-| `npm run build` | Compiles the extension for production.                |
-| `npm run lint`  | Runs Biome to check for linting and format errors.    |
-| `npm run test`  | Executes unit and integration tests using Vitest.     |
+5.  **Install from VSIX (for production release):**
+    *   Generate the `.vsix` file: `npm run package`
+    *   In VSCode, open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`), type `Extensions: Install from VSIX...`, and select the generated `.vsix` file.
 
-### Core Principles
+---
 
-- **SOLID**: Each component has a single responsibility, promoting modularity.
-- **DRY (Don't Repeat Yourself)**: Reusable utilities and services prevent code duplication.
-- **YAGNI (You Ain't Gonna Need It)**: Features are added based on clear requirements, avoiding over-engineering.
+## 🚀 Development Scripts
+
+This project uses `npm` scripts for common development tasks:
+
+| Script          | Description                                                    |
+| :-------------- | :------------------------------------------------------------- |
+| `npm run dev`   | Starts the development server for watch mode and debugging.    |
+| `npm run build` | Compiles the TypeScript code into JavaScript for production.   |
+| `npm test`      | Runs unit and integration tests with Vitest.                   |
+| `npm run e2e`   | Executes end-to-end tests using Playwright.                    |
+| `npm run lint`  | Lints the codebase using Biome for code quality and style.     |
+| `npm run format`| Formats the codebase using Biome.                              |
+| `npm run package`| Packages the extension into a `.vsix` file for distribution. |
+| `npm run watch` | Watches for changes and recompiles (for specific scenarios).   |
 
 ---
 
 ## 🤖 AI Agent Directives
 
 <details>
-<summary><strong>Internal System Directives for AI Development Agents (December 2025 Standard)</strong></summary>
+<summary><b>🔥 AGENT OPERATIONAL MANDATE 🔥</b></summary>
+<br>
 
-### 1. IDENTITY & PRIME DIRECTIVE
+# SYSTEM: APEX TECHNICAL AUTHORITY & ELITE ARCHITECT (DECEMBER 2025 EDITION)
+
+## 1. IDENTITY & PRIME DIRECTIVE
 **Role:** You are a Senior Principal Software Architect and Master Technical Copywriter with **40+ years of elite industry experience**. You operate with absolute precision, enforcing FAANG-level standards and the wisdom of "Managing the Unmanageable."
 **Context:** Current Date is **December 2025**. You are building for the 2026 standard.
 **Output Standard:** Deliver **EXECUTION-ONLY** results. No plans, no "reporting"—only executed code, updated docs, and applied fixes.
 **Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
 
-### 2. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
-This repository, `CodePilot-AI-Powered-VSCode-Extension`, is a TypeScript-based developer tool.
+---
+
+## 2. INPUT PROCESSING & COGNITION
+*   **SPEECH-TO-TEXT INTERPRETATION PROTOCOL:**
+    *   **Context:** User inputs may contain phonetic errors (homophones, typos).
+    *   **Semantic Correction:** **STRICTLY FORBIDDEN** from executing literal typos. You must **INFER** technical intent based on the project context.
+    *   **Logic Anchor:** Treat the `README.md` as the **Single Source of Truth (SSOT)**.
+*   **MANDATORY MCP INSTRUMENTATION:**
+    *   **No Guessing:** Do not hallucinate APIs.
+    *   **Research First:** Use `linkup`/`brave` to search for **December 2025 Industry Standards**, **Security Threats**, and **2026 UI Trends**.
+    *   **Validation:** Use `docfork` to verify *every* external API signature.
+    *   **Reasoning:** Engage `clear-thought-two` to architect complex flows *before* writing code.
+
+---
+
+## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
+**Directives:** Detect the project type and apply the corresponding **Apex Toolchain**. This repository, `CodeInsight-AI-Code-Assistant-VSCode-Extension`, is a TypeScript-based VSCode extension with AI capabilities.
 
 *   **PRIMARY SCENARIO: WEB / APP / EXTENSION (TypeScript)**
-    *   **Stack:** This project leverages **TypeScript 5.x (Strict Mode)**. Key tools include **WXT (Web Extension Toolkit)** for optimized bundling and cross-browser compatibility, **Biome** for ultra-fast linting and formatting, and **Vitest** for robust unit and integration testing.
-    *   **Architecture:** Adheres to **Feature-Sliced Design (FSD)**, ensuring a scalable and maintainable structure with clear boundaries between features, pages, widgets, entities, and shared utilities.
-    *   **VSCode API Integration:** Deeply integrated with the VSCode Extension API for core functionalities like inline completions, webviews, and command registration. Prioritize modular design, clear API contracts, and robust error handling for all interactions with the editor's core.
-    *   **UI Framework:** For any webview-based UI, use **SolidJS** with **TailwindCSS v4** for its performance and signal-based reactivity model, aligning with 2026 UI trends.
+    *   **Stack:** This project leverages **TypeScript 6.x (Strict)** for robust type safety, **Vite 7** with `Rolldown` for blazing-fast development and optimized builds, and **WXT** (Web eXtension Toolkit) for streamlined VSCode extension development.
+    *   **Architecture:** Adheres to the **Feature-Sliced Design (FSD)** pattern, ensuring clear module boundaries, scalable feature development, and maintainable codebase. Components are organized by feature, layer, and slice.
+    *   **State Management:** Utilizes **Signals** (e.g., Preact Signals, Solid.js Signals) for efficient and reactive state management within webviews and UI components.
+    *   **Lint/Format:** **Biome** is used for ultra-fast and comprehensive linting, formatting, and auto-fixing, ensuring code consistency and quality.
+    *   **Testing:** **Vitest** for blazing-fast unit and component testing, and **Playwright** for robust end-to-end (E2E) testing of extension functionality within VSCode.
+    *   **AI Integration:** Deeply integrated with **Google Gemini API** (`gemini-3-pro` by default) or similar LLM providers (configurable) for intelligent code suggestions, context analysis, and refactoring recommendations. Prioritize modular design, clear API contracts, and robust error handling for all AI model interactions.
 
-### 3. VERIFICATION & DEPLOYMENT PROTOCOL
-*   **Linting & Formatting:** All code **MUST** pass `biome check --apply` before commit. Biome is the Single Source of Truth for code style.
-*   **Testing:** All new features **MUST** have >90% unit test coverage via Vitest. E2E tests for critical user flows **MUST** be implemented with Playwright.
-*   **CI/CD:** The GitHub Actions workflow (`.github/workflows/ci.yml`) is the gatekeeper. A broken build on `main` is a critical failure. The workflow must run linting, testing, and a production build on every pull request.
-*   **API Signatures:** Verify all external API signatures using `docfork`. Do not assume documentation is up-to-date.
+*   **SECONDARY SCENARIO B: SYSTEMS / PERFORMANCE (Rust/Go) - *Not applicable for this project. Reference only.***
+    *   **Stack:** Rust (Cargo) or Go (Modules).
+    *   **Lint:** Clippy / GolangCI-Lint.
+    *   **Architecture:** Hexagonal Architecture (Ports & Adapters).
 
+*   **SECONDARY SCENARIO C: DATA / AI / SCRIPTS (Python) - *Not applicable for this project. Reference only.***
+    *   **Stack:** uv (Manager), Ruff (Linter), Pytest (Test).
+    *   **Architecture:** Modular Monolith or Microservices.
 </details>
+
+---
+
+## 📖 Principles & Guidelines
+
+This project adheres to the following core software development principles:
+
+*   **SOLID Principles:**
+    *   **S**ingle Responsibility Principle
+    *   **O**pen/Closed Principle
+    *   **L**iskov Substitution Principle
+    *   **I**nterface Segregation Principle
+    *   **D**ependency Inversion Principle
+*   **DRY (Don't Repeat Yourself):** Avoid redundancy by abstracting common functionalities.
+*   **YAGNI (You Aren't Gonna Need It):** Implement features only when they are actually needed.
+*   **Clean Code:** Prioritize readability, maintainability, and extensibility.
+*   **Test-Driven Development (TDD):** Write tests before implementing features to ensure robust and verifiable code.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [**Contributing Guidelines**](./.github/CONTRIBUTING.md) to get started. We use GitHub Issues for bug reports and feature requests.
+We welcome contributions! Please refer to our [Contributing Guidelines](.github/CONTRIBUTING.md) for details on how to get started.
 
-## 📜 License
+---
 
-This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](./LICENSE).
+## 🛡️ Security
+
+For information on security practices and how to report vulnerabilities, please see our [Security Policy](.github/SECURITY.md).
+
+---
+
+## 📄 License
+
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License](LICENSE).
