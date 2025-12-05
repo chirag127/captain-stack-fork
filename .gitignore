@@ -1,34 +1,52 @@
-# Node / VS Code Extension specific
+# ----------------------------------------------------------------------
+# APEX TECHNICAL AUTHORITY | .gitignore Standard Template (TypeScript/VSCode Extension)
+# Generated: December 2025 Standard
+# ----------------------------------------------------------------------
 
-npm-debug.log
-*.log
+# 1. Dependency Management
+/node_modules
+/jspm_packages
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
-!.vscode/launch.json
-!.vscode/tasks.json
+# 2. Build & Compilation Artifacts
+/dist
+/out
+/compiled
+/temp
+/coverage
+/build
+/release
 
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# Build output
-dist/
-.cache/
+# TypeScript specific compilation
 *.tsbuildinfo
 
-# Runtime cache files
-.runtimeconfig.json
-
-# Optional profiling tool files
-*.cpuprofile
-
-# TypeScript
-*.ts
-*.js.map
-*.d.ts
-
-# VS Code Extension specific
+# 3. VSCode Extension Specific Artifacts
 .vscode-test/
+.vscode-test-web/
+.vsix
+.vscode/*.log
+# Keep standard VSCode configuration files tracked (launch, tasks, settings, extensions)
+!/.vscode/settings.json
+!/.vscode/extensions.json
+!/.vscode/launch.json
+!/.vscode/tasks.json
+
+# 4. Environment & Local Configuration
+# Local secrets and environment files
+.env
+.env.local
+.env.*.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# 5. Testing & Debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lcov-report/
+*.log
+
+# 6. CI/CD Artifacts
+/.github/workflows/artifact
