@@ -1,63 +1,115 @@
-# 🚀 Contribution Guidelines for CodePilot-AI-Powered-VSCode-Extension
+# Contributing to CodeInsight-AI-Code-Assistant-VSCode-Extension
 
-Welcome to the Apex project! As a steward of this codebase, we adhere to the **Apex Technical Authority** standards: Zero-Defect, High-Velocity, and Future-Proof development. Contributions are the lifeblood of evolution; your rigorous attention to detail is expected and appreciated.
+Thank you for considering contributing to the **CodeInsight AI Code Assistant VSCode Extension**! We aim to maintain a high-velocity, zero-defect development process. To ensure consistency and quality across all contributions, please adhere to the following guidelines.
 
-## 1. Guiding Philosophy
+## 1. Code of Conduct
 
-Before contributing, internalize the core directives found in `.github/AGENTS.md`. This repository operates under strict architectural patterns (SOLID, DRY) and leverages TypeScript 6.x, Vite 7, and the Biome tooling suite for maximum performance and maintainability.
+This project adheres to the Contributor Covenant Code of Conduct. Please read the [Code of Conduct](https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/blob/main/CODE_OF_CONDUCT.md) to understand the expected standards of behavior.
 
-## 2. The Contribution Workflow
+## 2. Development Environment Setup (Late 2025 Standards)
 
-All contributions must follow this standardized path:
+Our extension is built using **TypeScript 6.x (Strict)** and leverages **Vite 7 (Rolldown)** for building and bundling. **WXT (Web Extension Tooling)** is used for managing the extension lifecycle across different browsers. **Biome** is employed for linting and formatting, and **Vitest** for unit testing.
 
-1.  **Fork:** Create a personal fork of the `main` branch.
-2.  **Clone:** Clone your fork locally: `git clone https://github.com/YOUR_USERNAME/CodePilot-AI-Powered-VSCode-Extension.git`
-3.  **Branching:** Create a new feature branch for your work. **Naming Convention:** `feat/short-description`, `fix/issue-number`, or `refactor/area-name`.
+Follow these steps to set up your development environment:
+
+1.  **Clone the Repository:**
     bash
-git checkout -b feat/ai-model-caching
+    git clone https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension.git
+    cd CodeInsight-AI-Code-Assistant-VSCode-Extension
+    
 
-4.  **Development & Testing (Crucial Step):**
-    *   Implement your changes, adhering strictly to the **TypeScript Strict Mode**.
-    *   **Verification Commands:** Before committing, ensure all quality gates pass. For this VSCode extension, use the following command suite:
-        bash
-        # Install dependencies (using uv if applicable, though Node/npm is standard for TS)
-        npm install
-        
-        # Run Linter/Formatter Check (Biome)
-        npm run lint
-        npm run format:check
+2.  **Install Dependencies:**
+    We use `npm` as our package manager. Ensure you have Node.js 20+ installed.
+    bash
+    npm install
+    
 
-        # Run Unit Tests (Vitest)
-        npm test
+3.  **Build the Extension:**
+    bash
+    npm run dev
+    
+    This command will build the extension in watch mode, suitable for development.
 
-        # Run E2E/Integration Tests (Playwright)
-        npm run test:e2e
-        
-5.  **Commit:** Write atomic, clear, and descriptive commit messages following the Conventional Commits specification.
-6.  **Push:** Push your branch to your fork: `git push origin feat/ai-model-caching`
-7.  **Pull Request (PR):** Open a Pull Request against `chirag127:main`.
+4.  **Run Tests:**
+    bash
+    npm test
+    
+    This command runs all unit tests using Vitest.
 
-## 3. Pull Request Requirements
+5.  **Lint and Format Code:**
+    We use Biome for code quality. Run the following commands:
+    bash
+    # Check and fix linting and formatting issues
+    npm run lint -- --fix
+    # Or just check without fixing
+    npm run lint
+    
 
-Every PR MUST reference the associated issue (if applicable) and must adhere to the template in `.github/PULL_REQUEST_TEMPLATE.md`.
+## 3. Contribution Workflow
 
-*   **Mandatory Checklist:**
-    *   [ ] Code passes all `npm run lint` checks.
-    *   [ ] All associated unit tests pass (`npm test`).
-    *   [ ] Functional changes include new or updated documentation.
-    *   [ ] Architectural adherence (SOLID, DRY) has been maintained or improved.
+We follow a standard GitHub pull request workflow:
 
-## 4. Security Disclosures
+1.  **Fork the Repository:** Create your own fork of the `chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension` repository.
 
-We treat security with the highest priority. If you discover a security vulnerability, **DO NOT** open a public issue. Follow the protocol outlined in `.github/SECURITY.md` for responsible disclosure.
+2.  **Create a New Branch:** Branch out from the `main` branch for your feature or bug fix.
+    bash
+    git checkout -b feature/your-feature-name
+    
 
-## 5. Code Style and Standards
+3.  **Make Your Changes:** Implement your changes, ensuring they follow the project's coding standards and architectural principles (SOLID, DRY, YAGNI).
 
-*   **Language:** TypeScript (Strict configuration enforced).
-*   **Tooling:** Biome is the exclusive tool for linting and formatting. Configure your editor to utilize Biome presets.
-*   **Architecture:** Prefer clear interfaces and dependency injection patterns (where applicable for extension architecture) to maintain modularity.
-*   **Naming:** All variables, functions, and classes must be descriptively named. Avoid single-letter variables unless standard (e.g., loop counters `i`, `j`).
+4.  **Test Your Changes:** Write comprehensive unit tests for any new functionality or bug fixes. Ensure all existing tests pass.
 
---- 
+5.  **Lint and Format:** Run `npm run lint -- --fix` to ensure your code adheres to the project's formatting and linting standards.
 
-*Thank you for elevating this project. Your adherence to these standards ensures the longevity and stability of the CodePilot ecosystem.*
+6.  **Commit Your Changes:** Write clear and concise commit messages.
+    bash
+    git add .
+    git commit -m "feat: Add descriptive commit message"
+    
+
+7.  **Push to Your Fork:** Push your changes to your fork on GitHub.
+    bash
+    git push origin feature/your-feature-name
+    
+
+8.  **Open a Pull Request:** Open a pull request from your feature branch to the `main` branch of the `chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension` repository.
+
+    *   **PR Template:** Ensure your pull request description follows the [Pull Request Template](https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/blob/main/.github/PULL_REQUEST_TEMPLATE.md).
+
+## 4. Architectural Principles
+
+We adhere to the following principles:
+
+*   **SOLID:** Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.
+*   **DRY:** Don't Repeat Yourself.
+*   **YAGNI:** You Ain't Gonna Need It.
+*   **Feature-Sliced Design (FSD):** For frontend/extension architecture, we aim for a clear separation of concerns into features, layers, and segments.
+
+## 5. Code Submission Standards
+
+*   **TypeScript Strict Mode:** All TypeScript code must be written with `strict: true` enabled in `tsconfig.json`.
+*   **Linter:** Biome will automatically catch most style and potential code issues. Ensure it passes without errors or warnings.
+*   **Tests:** All new code must be accompanied by relevant unit tests.
+*   **Documentation:** Update relevant documentation (e.g., `README.md`, inline comments) as needed.
+
+## 6. Reporting Issues
+
+Before reporting an issue, please check if it already exists. If not, please use the [Bug Report Issue Template](https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/blob/main/.github/ISSUE_TEMPLATE/bug_report.md) to provide detailed information.
+
+## 7. Security Vulnerabilities
+
+If you discover a security vulnerability, please follow our [Security Policy](https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/blob/main/.github/SECURITY.md) for reporting.
+
+## 8. AI Agent Directives
+
+This repository is managed by Apex AI Agents. Ensure your contributions align with the directives outlined in the [AGENTS.md](https://github.com/chirag127/CodeInsight-AI-Code-Assistant-VSCode-Extension/blob/main/AGENTS.md) file. Key aspects include:
+
+*   **Tech Stack:** TypeScript 6.x (Strict), Vite 7, WXT, Biome, Vitest.
+*   **Architecture:** Feature-Sliced Design (FSD).
+*   **Verification:** Use `npm test` for unit tests and `npm run lint` for code quality checks.
+*   **AI Integration:** Context-aware code suggestions leveraging StackOverflow data. Ensure API integrations are robust and efficient.
+
+---*
+
+*By contributing, you agree to abide by these guidelines and the project's Code of Conduct.*
